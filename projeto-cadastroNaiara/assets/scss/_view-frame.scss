@@ -1,0 +1,130 @@
+.view-frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+
+  &.background-img {
+    position: relative;
+
+    &:after {
+      content: "";
+      background-image: url(../img/nara-pinceis.jpg);
+      background-blend-mode: multiply;
+      background-repeat: no-repeat;
+      background-position: 100% 62%;
+      background-size: 120%;
+      position: fixed;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+
+      @media (max-width:450px) {
+        background-position: 60% -70px;
+        background-size: 290%;
+      }
+    }
+  }
+
+
+  .main {
+    &-header {
+      height: 25px;
+      background: map-get($mainColorsMap, "main-darkred");
+    }
+
+    &-content {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+
+      @media (max-width:450px) {
+        flex-direction: column;
+        align-content: center;
+      }
+
+      .item-card {
+        z-index: 1;
+        background: rgba(map-get($mainColorsMap, "main-white"), 0.1);
+        //box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        min-width: 160px;
+        //min-height: 180px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px -2px map-get($mainColorsMap, "main-black");
+
+        a {
+          display: flex;
+          padding: 15px 30px;
+          justify-content: center;
+          height: 100%;
+          width: 100%;
+          border: 1px solid transparent;
+          color: map-get($mainColorsMap, "main-white");
+          text-shadow: 0 1px 3px black;
+          text-decoration: none;
+
+          &:hover {
+            text-shadow: none;
+            background: map-get($mainColorsMap, "main-white");
+            color: map-get($mainColorsMap, "main-darkred");
+            border-radius: 5px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    &-footer {
+      z-index: 1;
+      padding: 20px 30px;
+      background: map-get($mainColorsMap, "main-darkred");
+      color: map-get($mainColorsMap, "main-red");
+      min-height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      flex-wrap: wrap;
+
+      @media (max-width:450px) {
+        justify-content: center;
+      }
+
+      .assign {
+        color: map-get($mainColorsMap, "main-white");
+
+        .title {
+          font-size: 2rem;
+        }
+      }
+
+      .contact {
+        display: flex;
+        justify-content: space-between;
+
+        a.icon {
+          font-size: 1.2rem;
+          padding: 10px;
+          color: map-get($mainColorsMap, "main-white");
+
+          &:hover {
+            color: map-get($mainColorsMap, "main-black");
+          }
+        }
+      }
+    }
+  }
+
+}

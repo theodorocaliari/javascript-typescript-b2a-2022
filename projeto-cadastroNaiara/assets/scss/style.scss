@@ -1,0 +1,57 @@
+@import "variables";
+@import "view-frame";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: map-get($mainColorsMap, "main-white");
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  font-size: 16px;
+}
+
+.partialComponent {
+  z-index: 1;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semi-bold {
+  font-weight: 600;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-extra-light {
+  font-weight: 200;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-initial {
+  flex: 0 1 auto;
+}
+
+.flex-none {
+  flex: none;
+}

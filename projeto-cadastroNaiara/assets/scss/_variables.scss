@@ -1,0 +1,23 @@
+//https://coolors.co/36c9c6-f4f2f3-b4e33d-cf1259-090c02
+$mainColorsMap: (
+  "main-blue": rgba(54, 201, 198, 1),
+  "main-white": rgba(244, 242, 243, 1),
+  "main-lime": rgba(180, 227, 61, 1),
+  "main-pink": rgba(207, 18, 89, 1),
+  "main-red": rgba(223, 41, 53, 1),
+  "main-darkred": rgba(165, 0, 0, 1),
+  "main-black": rgba(9, 12, 2, 1),
+);
+$mainColors: rgba(54, 201, 198, 1), rgba(244, 242, 243, 1), rgba(180, 227, 61, 1), rgba(207, 18, 89, 1), rgba(9, 12, 2, 1);
+
+$color1: nth($mainColors, 1);
+$n: length($mainColors);
+$i: 0;
+
+:root {
+
+  @each $name,
+  $color in $mainColorsMap {
+    --cor-#{$name}: #{$color};
+  }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de CPF</title>
+  </head>
+  <body>
+    <section class="container">
+      <h1 class="titulo">Gerador de Senha</h1>
+
+      <div class="flex-box">
+        <div class="box-item">
+          <h3 class="titulo">Selecione as opções:</h3>
+        </div>
+        <div class="box-item">
+          <label> <input type="checkbox" checked name="numbers" id="numbers" /> Números <span>(0123456789)</span></label>
+        </div>
+        <div class="box-item">
+          <label><input type="checkbox" checked name="lowercase" id="lowercase" /> Minúsculas <span>(abcdefghijklmnopqrstuvwxyz)</span></label>
+        </div>
+        <div class="box-item">
+          <label><input type="checkbox" name="uppercase" id="uppercase" /> Maiúsculas <span>(ABCDEFGHIJKLMNOPQRSTUVWXYZ)</span></label>
+        </div>
+        <div class="box-item">
+          <label><input type="checkbox" name="symbols" id="symbols" /> Simbolos <span>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</span></label>
+        </div>
+      </div>
+
+      <div class="flex-box">
+        <div class="box-item">
+          <label>
+            Quantia de Caracteres:
+            <input type="text" name="length" id="length" />
+          </label>
+        </div>
+        <div class="box-item">
+          <button id="generate">Gerar senha</button>
+
+          <code class="senha-gerada"></code>
+        </div>
+      </div>
+    </section>
+
+    <script src="./assets/js/bundle.js"></script>
+  </body>
+</html>

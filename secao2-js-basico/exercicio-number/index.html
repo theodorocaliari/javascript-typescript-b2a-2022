@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    let numeroUsuario = prompt("Digite um número qualquer:");
+
+    numeroUsuario = Number(numeroUsuario);
+
+    document.body.innerHTML = `<h2>Seu número é ${numeroUsuario}</h2>`;
+    document.body.innerHTML += `Raiz quadrada: <strong>${Math.sqrt(numeroUsuario)}</strong><br>`;
+    document.body.innerHTML += `${numeroUsuario} é inteiro: <strong>${ (Number.isInteger(numeroUsuario) ? "é inteiro" : "não é inteiro") }</strong><br>`;
+    document.body.innerHTML += `${numeroUsuario} é NaN: <strong>${(Number.isNaN(numeroUsuario) ? "sim, não é um número" : "não, é um número")}</strong><br>`;
+    document.body.innerHTML += `Arredondando para baixo: <strong>${Math.floor(numeroUsuario)}</strong><br>`;
+    document.body.innerHTML += `Arredondando para cima: <strong>${Math.ceil(numeroUsuario)}</strong><br>`;
+    document.body.innerHTML += `Com duas casas decimais: <strong>${numeroUsuario.toFixed(2)}</strong><br>`;
+
+  </script>
+</body>
+</html>

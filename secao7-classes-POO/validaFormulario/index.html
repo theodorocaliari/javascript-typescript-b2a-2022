@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Validando Formulario</title>
+  </head>
+  <body>
+    <section class="container">
+      <div class="header">
+        <h3 class="title">Cadastro</h3>
+      </div>
+      <form action="/" method="post" class="formulario">
+        <div class="form-grid">
+          <div class="form-grid__item">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" />
+          </div>
+          <div class="form-grid__item">
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" name="sobrenome" id="sobrenome" />
+          </div>
+          <div class="form-grid__item">
+            <label for="cpf">CPF</label>
+            <input type="text" name="cpf" id="cpf" />
+          </div>
+          <div class="form-grid__item">
+            <label for="username">Nome de Usuário</label>
+            <input type="text" name="username" id="username" />
+          </div>
+          <div class="form-grid__item">
+            <label for="password">Senha</label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <div class="form-grid__item">
+            <label for="confirmPassword">Repetir senha</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+            />
+          </div>
+          <div class="form-grid__item">
+            <input type="submit" value="Cadastrar" />
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <script src="./assets/js/validaCPF.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
