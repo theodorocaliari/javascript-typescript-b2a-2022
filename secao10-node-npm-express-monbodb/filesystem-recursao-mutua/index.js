@@ -38,7 +38,7 @@ async function filesTree(rootDir) {
   const dirContent = await myReaddir(rootDir);
 
   for (let content of dirContent) {
-    const filePath = path.resolve(rootDir, content);
+    const filePath = path.resolve(rootDir, content); //content é nome do arquivo
     const stats = await fileStat(filePath);
 
     //retirando o diretorio git da listagem
@@ -50,6 +50,8 @@ async function filesTree(rootDir) {
     }
 
     if (stats.isDirectory()) {
+      //checa que é diretorio
+      //entra no diretorio e executa a funcao
       filesTree(filePath);
       continue;
     }

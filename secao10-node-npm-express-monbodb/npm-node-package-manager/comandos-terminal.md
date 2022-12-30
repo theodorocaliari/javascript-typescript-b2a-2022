@@ -1,56 +1,56 @@
-#NPM TERMINAL COMMANDS
+# NPM TERMINAL COMMANDS
 
-####Init "shortcut"
+#### Init "shortcut"
 
 ```terminal
 npm init -y
 ```
 
-####Install package WITH update option
+#### Install package WITH update option
 
 ```terminal
 npm install <package-name>
 ```
 
-####Install package WITHOUT update option
+#### Install package WITHOUT update option
 
 ```terminal
 npm install <package-name> -E
 ```
 
-####Update package
+#### Update package
 
 ```terminal
 npm update
 ```
 
-####Uninstall package
+#### Uninstall package
 
 ```terminal
 npm uninstall <package-name>
 ```
 
-####Create DEV dependencies and PROD dependencies
+#### Create DEV dependencies and PROD dependencies
 
 ```terminal
 npm install <package-name> --save-dev
 npm install <package-name> --save-prod
 ```
 
-####Install especific version
+#### Install especific version
 
 ```terminal
 npm install <package-name>@<version-number>
 ```
 
-####List installed packages
+#### List installed packages
 
 ```terminal
 npm ls
 npm ls --depth=0
 ```
 
-####List outdate packages
+#### List outdate packages
 
 ```terminal
 npm outdated
