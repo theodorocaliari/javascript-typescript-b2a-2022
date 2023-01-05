@@ -1,15 +1,13 @@
-const HomeModel = require("../models/HomeModel");
-
-HomeModel.create({
-  titulo: "Titulo exemplo",
-  descricao: "Descricao exemplo",
-})
-  .then((dados) => console.log(dados))
-  .catch((err) => console.log(err));
-
 exports.paginaInicial = (req, res) => {
+  //sessao
+  //req.session.usuario = { nome: "luiz", logado: true };
+
+  //flash assim q a informação é recuperada ela deixa de existir
+  // req.flash("info", "information");
+  // req.flash("error", "erro");
+  // req.flash("success", "sucesso");
   res.render("index");
-  console.log(`req.session.nome: ${req.session.nome}`);
+  return;
 };
 
 exports.trataPost = (req, res) => {

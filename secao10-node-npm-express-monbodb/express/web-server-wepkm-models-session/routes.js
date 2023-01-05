@@ -5,7 +5,6 @@ const homeController = require("./src/controllers/homeController");
 const contatoController = require("./src/controllers/contatoController");
 
 function meuMiddleware(req, res, next) {
-  req.session = { nome: "Luiz", sobrenome: "miranda" };
   console.log();
   console.log("Passei no 'meuMiddleware'");
   console.log();
