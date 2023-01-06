@@ -1,0 +1,6 @@
+<%# https://ejs.co/ %> <%- include('includes/head'); %>
+<section>
+  <h1><% if(typeof titulo !== 'undefined'){ %> <%= titulo %> <% } %></h1>
+  <% numeros.forEach(num => { %> <%=num%> <% }); %>
+</section>
+<%- include('includes/footer'); %>
