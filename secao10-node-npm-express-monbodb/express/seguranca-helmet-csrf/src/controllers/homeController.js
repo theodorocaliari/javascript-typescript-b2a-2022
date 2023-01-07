@@ -1,3 +1,4 @@
+//controller fica resposavel pelo model e pela view da rota
 exports.paginaInicial = (req, res) => {
   //sessao
   //req.session.usuario = { nome: "luiz", logado: true };

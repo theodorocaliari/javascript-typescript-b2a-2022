@@ -1,23 +1,20 @@
 const express = require("express");
 const app = express();
-const path = require("path");
-const routes = require("./routes");
-const { response } = require("express");
-const session = require("express-session");
-const MongoStore = require("connect-mongo");
-const flashMassages = require("connect-flash");
-const helmet = require("helmet");
-const csrf = require("csurf");
-const { outroMiddleware, middlewareGlobal, checkCsrfError, csrfMiddleware } = require("./src/middlewares/middleware");
+const path = require("path"); //caminhos absolutos
+const routes = require("./routes"); //configuracao de rotas da aplicacao
+const mongoose = require("mongoose"); //modela a base de dados
+const session = require("express-session"); //sessoes para identificar o navegador, cookie
+const MongoStore = require("connect-mongo"); //salva a sessao dentro da base de dados
+const flashMassages = require("connect-flash"); //mensagem que após ler ela é apagada da base de dados (mensagem de feedback)
+const helmet = require("helmet"); //seguranca
+const csrf = require("csurf"); //tokens de seguranca para formularios
+const { outroMiddleware, middlewareGlobal, checkCsrfError, csrfMiddleware } = require("./src/middlewares/middleware"); //
 
 require("dotenv").config({
   path: path.resolve(__dirname, "./.env"),
 });
 
 const MONGO_URI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}.cmuasxv.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
-
-const mongoose = require("mongoose");
-const csurf = require("csurf");
 
 mongoose.set("strictQuery", true);
 mongoose
@@ -32,8 +29,8 @@ mongoose
 
 app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "public"))); //caminho absoluto para o diretorio public
-//caminho absoluto para views
 
 //configurando session
 const sessionOptions = session({
@@ -53,8 +50,9 @@ const sessionOptions = session({
 app.use(sessionOptions);
 app.use(flashMassages());
 
+//caminho absoluto para views
 app.set("views", path.resolve(__dirname, "src", "views"));
-app.set("view engine", "ejs"); //ejs possibilita o uso de loops e recursos dinamicos no html
+app.set("view engine", "ejs"); //ejs possibilita o uso de loops e recursos javascript (dinamicos) no html
 
 app.use(csrf());
 
