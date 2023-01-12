@@ -65,4 +65,13 @@ Contato.buscaPorId = async function (id) {
   return user;
 };
 
+Contato.prototype.editContato = async function (id) {
+  //este metodo não é estatico pois precisa acessar outros metodos da funcao construtora, por isso o uso do prototype
+  if (typeof id !== "string") return;
+  this.valida();
+  if (this.errors.length > 0) return;
+
+  this.contato = await ContatoModel.findByIdAndUpdate(id, this.body, { new: true });
+};
+
 module.exports = Contato;
