@@ -57,14 +57,6 @@ Contato.prototype.cleanUp = function () {
   };
 };
 
-//sem prototype é equivalente a uma funcao estatica
-Contato.buscaPorId = async function (id) {
-  //retorna um usuario ou null
-  if (typeof id !== "string") return;
-  const user = await ContatoModel.findById(id);
-  return user;
-};
-
 Contato.prototype.editContato = async function (id) {
   //este metodo não é estatico pois precisa acessar outros metodos da funcao construtora, por isso o uso do prototype
   if (typeof id !== "string") return;
@@ -72,6 +64,28 @@ Contato.prototype.editContato = async function (id) {
   if (this.errors.length > 0) return;
 
   this.contato = await ContatoModel.findByIdAndUpdate(id, this.body, { new: true });
+};
+
+//sem prototype é equivalente a uma funcao estatica
+Contato.buscaPorId = async function (id) {
+  //retorna um usuario ou null
+  if (typeof id !== "string") return;
+  const contato = await ContatoModel.findById(id);
+  return contato;
+};
+
+Contato.buscaContatos = async function () {
+  //buscando contatos no banco e ordenando na ordem decrescente(-1) em 'criadoEm'
+  //ordem crescente (1)
+  //em find é possivel enviar um objeto para fazer um filtro
+  const contatos = await ContatoModel.find().sort({ criadoEm: -1 });
+  return contatos;
+};
+
+Contato.delete = async function (id) {
+  if (typeof id !== "string") return;
+  const contato = await ContatoModel.findOneAndDelete({ _id: id });
+  return contato;
 };
 
 module.exports = Contato;

@@ -23,8 +23,8 @@ module.exports = {
     rules: [
       {
         exclude: /node_modules/,
-        test: /\.css$/i,
-        use: "css-loader",
+        //test: /\.css$/i,
+        //use: "css-loader",
       },
     ],
   },

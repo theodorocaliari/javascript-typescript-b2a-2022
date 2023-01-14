@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-lg">
           <h4>Crie sua conta abaixo</h4>
-          <form method="POST" action="/login/register">
+          <form class="form-cadastro" method="POST" action="/login/register">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
             <div class="form-group">
               <label>Seu email</label>
@@ -29,7 +29,7 @@
 
         <div class="col-lg">
           <h4>Acesse sua conta abaixo</h4>
-          <form method="POST" action="/login/login">
+          <form class="form-login" method="POST" action="/login/login">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
             <div class="form-group">
               <label>Seu email</label>

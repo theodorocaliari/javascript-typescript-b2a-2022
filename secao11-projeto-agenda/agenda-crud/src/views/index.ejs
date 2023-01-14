@@ -5,32 +5,27 @@
     <div class="col-lg-2"></div>
     <div class="col-lg-8 my-3">
       <h1 class="text-center">Agenda</h1>
-      <p class="text-center lead">Contados cadastrados listados abaixo:</p>
+      <p class="text-center lead">Contados cadastrados</p>
 
-      <%- include ("includes/messages") %>
-
+      <%- include ("includes/messages") %> <% if(contatos.length > 0){ %>
       <div class="responsive-table">
         <table class="table my-3">
           <tr>
             <th>Nome</th>
             <th>Sobrenome</th>
-            <th>Telefone</th>
             <th>Email</th>
+            <th>Telefone</th>
             <% if(user) { %>
             <th>Ação</th>
             <% } %>
           </tr>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <% if(user) { %>
-            <td>5</td>
-            <% } %>
-          </tr>
+          <!-- loop -->
+          <%- include ("includes/loop-contatos") %>
         </table>
       </div>
+      <% } else { %>
+      <p class="text-center">Nenhum contato cadastrado</p>
+      <%}%>
     </div>
     <div class="col-lg-2"></div>
   </div>
